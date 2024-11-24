@@ -1,0 +1,674 @@
+/* Reset basic margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and fonts */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f9;
+}
+
+/* Basic headings */
+h1, h2, h3 {
+  color: #333;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+/* Navigation Styles */
+header {
+  position: fixed; /* Keeps the header fixed at the top */
+  top: 0;
+  right: 0; /* Aligns the header to the right */
+  width: 100%; /* Full width */
+  background-color: #2c3e50; /* Dark background for contrast */
+  padding: 15px 40px;
+  z-index: 1000; /* Keeps header above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 30px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover and Focus styles */
+header nav ul li a:hover,
+header nav ul li a:focus { /* Include :focus for mobile/touch devices */
+  color: #e74c3c; /* Orange color on hover/focus */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 30px; /* Space from the menu items */
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hide the navigation links by default */
+  header nav ul {
+    display: none; /* Hide navigation links */
+    flex-direction: column; /* Stack the menu items vertically */
+    align-items: flex-end;
+    width: 100%;
+    background-color: #2c3e50;
+    padding-top: 20px;
+  }
+
+  header nav ul li {
+    margin: 10px 0; /* Space between stacked items */
+  }
+
+  header nav ul li a {
+    font-size: 1.2em; /* Slightly larger font size on mobile */
+    padding: 10px 20px;
+  }
+
+  /* Show the hamburger menu on mobile screens */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Display the menu when the hamburger is clicked */
+  header nav.active ul {
+    display: flex; /* Show the menu when active */
+  }
+
+  /* Make links look visually focused on mobile when tapped */
+  header nav ul li a:focus {
+    color: #e74c3c; /* Orange color on focus */
+  }
+}
+
+/* Home Section */
+#home {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 100px 20px; /* Padding adjusted to ensure space around content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures section fills at least the full viewport height */
+}
+
+#home h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#home p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  max-width: 600px; /* Optional: keeps text line lengths reasonable */
+  line-height: 1.5;
+  color: white;
+}
+
+#home .btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#home .btn:hover {
+  background-color: #c0392b;
+}
+
+/* Container to center everything */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* About Section */
+#about {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 100px 20px;
+  display: flex;
+  justify-content: space-between; /* Distribute space between text and image */
+  align-items: center; /* Center align both items vertically */
+  flex-wrap: wrap; /* Ensure they stack on smaller screens */
+}
+
+/* Container styling */
+#about .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left; /* Ensures text aligns to the left */
+  width: 100%; /* Ensure it takes up full width */
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Heading */
+#about h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+  width: 55%; /* Slightly reduced width for better balance with the image */
+}
+
+/* Paragraph */
+#about p {
+  font-size: 1.2em;
+  color: #555;
+  text-align: left;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+  width: 55%; /* Ensures it does not take up full width */
+  margin-bottom: 20px;
+}
+
+/* Profile Image */
+#about .profile-img {
+  width: 250px;  /* Adjusted size */
+  height: 250px; /* Adjusted size */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+  margin-left: 30px; /* Adds spacing between text and image */
+}
+
+/* HR Styling */
+#about hr {
+  width: 80px;
+  border: 3px solid #007BFF;
+  margin: 30px auto;
+}
+
+/* Animation for smooth transitions */
+#about.show h2,
+#about.show p {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition for opacity and transform */
+}
+
+#about.show .profile-img {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Same transition for profile image */
+}
+
+/* Hover effect for profile image */
+#about .profile-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #about .container {
+    display: flex;
+    flex-direction: column; /* Text first, image second */
+    text-align: center;
+  }
+
+  /* Ensure the header and paragraph have full width and spacing */
+  #about h2, #about p {
+    width: 100%; /* Full width on small screens */
+    text-align: center; /* Ensure text is centered */
+    margin: 10px 0; /* Add margin for spacing */
+  }
+
+  /* Adjust profile image for mobile */
+  #about .profile-img {
+    width: 200px;  /* Adjust size for mobile */
+    height: 200px; /* Adjust size */
+    margin-top: 20px;  /* Adds space between image and text */
+    margin-left: auto; /* Ensure image is centered */
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #about h2 {
+    font-size: 2em;  /* Adjust font size for smaller screens */
+  }
+
+  #about p {
+    font-size: 1em;  /* Adjust font size for smaller screens */
+    padding: 0 10px; /* Add padding to avoid text touching the screen edges */
+  }
+
+  #about .profile-img {
+    width: 180px;  /* Adjust profile image size */
+    height: 180px; /* Adjust profile image size */
+    margin-top: 15px; /* Add space between image and text */
+  }
+}
+
+
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 90%; /* Allow the image to be responsive */
+  max-height: 80%; /* Prevent the image from being too tall */
+  margin: auto;
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; /* Ensure the close button is on top */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Portfolio Styles (for reference) */
+#portfolio {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#portfolio p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+  gap: 30px; /* Space between projects */
+  margin-top: 30px;
+}
+
+/* Individual Project Styling */
+.project {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+  min-height: 350px; /* Ensure the height of each project is at least 350px */
+  position: relative;
+}
+
+.project-img {
+  cursor: pointer;
+}
+
+.project img {
+  width: 100%; /* Fill the width of the container */
+  height: 200px; /* Fixed height for the images */
+  object-fit: cover; /* Ensures the image fits well without distortion */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 1.1em;
+  margin-top: 20px; /* Space below the image */
+  color: #555;
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center align the text below the image */
+}
+
+/* Hover Effect for Project */
+.project:hover {
+  transform: scale(1.05); /* Slightly increase the size of the project on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Darker and bigger shadow on hover */
+  background-color: #ecf0f1; /* Light background color change on hover */
+}
+
+/* Make Hover Effect Work on Touch Devices */
+.project:active, .project:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  background-color: #ecf0f1;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .projects {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+      grid-template-columns: 1fr; /* 1 column per row for small screens */
+  }
+
+  .project img {
+      height: 250px; /* Adjust image height for smaller screens */
+  }
+
+  .project-description {
+    font-size: 1em; /* Slightly reduce font size on smaller screens */
+    margin-top: 15px; /* Reduce space above the description */
+  }
+}
+
+@media (max-width: 480px) {
+  .project img {
+      height: 200px; /* Adjust image height for very small screens */
+  }
+}
+
+
+/* Resume Section */
+#resume {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+#resume .container {
+  max-width: 900px; /* You can adjust this based on your desired width */
+  margin: 0 auto;
+  padding: 0 20px; /* To ensure there's some padding on smaller screens */
+  text-align: center;
+}
+
+#resume h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#resume p {
+  font-size: 1.2em;
+  margin-bottom: 40px; /* Add some space before the list */
+}
+
+#resume ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.1em;
+  font-weight: 300;
+  text-align: left; /* Align text to the left for better readability */
+  margin: 0 auto;
+  max-width: 600px; /* Set a max-width for the list */
+}
+
+#resume ul li {
+  margin-bottom: 20px;
+}
+
+#resume .btn {
+  padding: 12px 25px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+#resume .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Add media query to improve responsiveness */
+@media (max-width: 768px) {
+  #resume h2 {
+    font-size: 2em;
+  }
+
+  #resume p {
+    font-size: 1.1em;
+  }
+
+  #resume ul {
+    font-size: 1em;
+  }
+
+  #resume .container {
+    padding: 0 15px;
+  }
+
+  #resume .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #333;
+}
+
+#contact p {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contact-info ul li strong {
+  font-weight: bold;
+}
+
+.contact-info ul li a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-info ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer (Original) */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Media Queries (Responsive Design) */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  #contact h2 {
+    font-size: 2.2em;
+  }
+
+  #contact p {
+    font-size: 1em;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  #contact {
+    padding: 40px 20px;
+  }
+
+  #contact h2 {
+    font-size: 2em;
+  }
+
+  #contact p {
+    font-size: 1em;
+  }
+
+  .contact-info ul li {
+    font-size: 1em;
+  }
+
+  .contact-info ul li a {
+    font-size: 1.1em;
+  }
+}
+
+/* Very Small Screens (480px and below) */
+@media (max-width: 480px) {
+  #contact h2 {
+    font-size: 1.8em;
+  }
+
+  #contact p {
+    font-size: 0.95em;
+  }
+
+  .contact-info ul li {
+    font-size: 0.9em;
+  }
+
+  .contact-info ul li a {
+    font-size: 1em;
+  }
+}
